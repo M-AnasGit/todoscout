@@ -8,7 +8,8 @@
     "scripts": {
         "build": "tsup src/index.ts --format cjs,esm --dts",
         "lint": "tsc",
-        "start": "ts-node src/index.ts"
+        "start": "ts-node src/index.ts",
+        "release": "changeset publish"
     },
     "publishConfig": {
         "access": "public"
