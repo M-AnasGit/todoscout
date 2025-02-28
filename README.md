@@ -2,8 +2,6 @@
 
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
----
-
 **whatodo** is a CLI tool that scans your codebase for unfinished tasks (e.g., `// TODO:`, `// FIXME:`) and generates a structured report. It helps teams keep track of scattered tasks and metadata such as assigned users, due dates, and task priorities.
 
 ## ✨ Features
@@ -36,6 +34,18 @@ whatodo init
 ```
 
 This creates a `.whatodorc.json` config file where you can customize patterns, metadata, and ignored directories.
+
+To ensure whatodo correctly detects and processes tasks, format your comments using the following structure:
+
+```typescript
+// KEYWORD: @metadata(value) @metadata(value) rest of the comment...
+```
+
+Example:
+
+```typescript
+// TODO: @users(jhon | jane) @due(2025-01-01) Connect to the database
+```
 
 ### 2️⃣ **Scan Your Codebase**
 
