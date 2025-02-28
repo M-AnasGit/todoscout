@@ -20,4 +20,5 @@ export type Todos = {
     file: string;
     line: number;
     text: string;
+    priority: 'LOW' | 'MEDIUM' | 'HIGH';
 };

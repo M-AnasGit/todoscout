@@ -10,7 +10,15 @@ export function getConfig(): Config {
     return DEFAULT_CONFIG;
 }
 
-export function parseFiles(files: string[], patterns: RegExp[]): Todos[] {
+export function parseFiles(
+    files: string[],
+    config_patterns: Config['patterns'],
+): Todos[] {
+    const patterns = config_patterns.map((pattern) => ({
+        regex: new RegExp(`(//|#|/\\*|--)\\s*${pattern.name}:(.*)`, 'gi'),
+        priority: pattern.priority,
+    }));
+
     let foundTodos: Todos[] = [];
 
     files.forEach((file) => {
@@ -18,13 +26,14 @@ export function parseFiles(files: string[], patterns: RegExp[]): Todos[] {
         const lines = content.split('\n');
 
         lines.forEach((line, lineNumber) => {
-            patterns.forEach((pattern) => {
-                const match = pattern.exec(line);
+            patterns.forEach((p) => {
+                const match = p.regex.exec(line);
                 if (match) {
                     foundTodos.push({
                         file,
                         line: lineNumber + 1,
                         text: match[2]?.trim() || '',
+                        priority: p.priority,
                     });
                 }
             });

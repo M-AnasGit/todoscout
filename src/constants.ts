@@ -3,7 +3,7 @@ import { Config } from './types';
 
 export const CONFIG_FILE = path.join(
     process.cwd(),
-    process.env.CONFIG_FILENAME!,
+    process.env.CONFIG_FILENAME || '.whatodorc.json',
 );
 
 export const DEFAULT_CONFIG: Config = {
