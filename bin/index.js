@@ -1,3 +1,4 @@
 #!/usr/bin/env node
 
-console.log("Todoscout CLI is working!");
+const { main } = require('../dist/index.js');
+main();
