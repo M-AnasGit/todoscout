@@ -1,5 +1,11 @@
 # whatodo
 
+## 2.1.0
+
+### Minor Changes
+
+- 4c2175b: Updated the entry folder from bin to dist
+
 ## 2.0.0
 
 ### Major Changes
