@@ -1,5 +1,11 @@
 # whatodo
 
+## 1.1.0
+
+### Minor Changes
+
+- f45bed5: Updated the bin folder location to the correct one
+
 ## 1.0.1
 
 ### Patch Changes
