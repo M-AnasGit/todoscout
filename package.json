@@ -29,6 +29,6 @@
         "glob": "^11.0.1"
     },
     "bin": {
-        "todoscout": "dist/index.js"
+        "todoscout": "bin/index.js"
     }
 }
