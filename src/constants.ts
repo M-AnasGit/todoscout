@@ -3,7 +3,7 @@ import { Config } from './types';
 
 export const CONFIG_FILE = path.join(
     process.cwd(),
-    process.env.CONFIG_FILENAME || '.whatodorc.json',
+    process.env.CONFIG_FILENAME || '.todoscoutrc.json',
 );
 
 export const DEFAULT_CONFIG: Config = {

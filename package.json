@@ -9,7 +9,7 @@
         "build": "tsup src/index.ts --format cjs,esm --dts",
         "lint": "tsc",
         "start": "ts-node src/index.ts",
-        "release": "changeset publish"
+        "release": "npm run build && changeset publish"
     },
     "publishConfig": {
         "access": "public"
@@ -28,7 +28,10 @@
         "commander": "^13.1.0",
         "glob": "^11.0.1"
     },
+    "files": [
+        "dist"
+    ],
     "bin": {
-        "todoscout": "bin/index.js"
+        "todoscout": "dist/index.js"
     }
 }
